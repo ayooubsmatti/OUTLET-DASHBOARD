@@ -181,4 +181,4 @@ Testez le fonctionnement en forçant une actualisation manuelle pour vérifier q
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[ayoub] v 0.1
