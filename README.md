@@ -1,6 +1,10 @@
 # OUTLET-DASHBOARD
 Objectif principal :
-Analyser les performances de ventes, les caractéristiques des articles et des points de vente pour identifier des tendances, des opportunités d’amélioration et optimiser les décisions stratégiques.
+Analyser les performances de ventes, les caractéristiques des articles et des points de vente pour identifier des tendances, des opportunités d’amélioration et optimiser les décisions stratégiques.<br>
+
+
+![Dashboard](IMG/Dashboard.png)
+
 ## 1. KPI utilisés :
    - Total Sales – Revenus totaux.
    - Average Sales – Revenu moyen par vente.
@@ -53,6 +57,8 @@ Colonnes principales :
 ##### Objectif de la Modélisation :
 Diviser le dataset en une table factuelle et des tables dimensionnelles pour améliorer l’efficacité et la lisibilité du modèle.
 ##### Création des Tables :
+
+
  - FACT_Sales : Contient les données transactionnelles et mesures principales : 
    Item Identifier, Outlet Identifier, Item Visibility, Sales, Rating.
 ```bash
@@ -68,12 +74,14 @@ Item Identifier, Item Fat Content, Item Type, Item Weight.
 ```bash
 Outlet Identifier, Outlet Establishment Year, Outlet Location Type, Outlet Size, Outlet Type, Outlet Age (colonne calculée).
 ```
-
+![transformation](IMG/transformation.png)  <br>
 ##### Création des Relations :
 
 Connecter FACT_Sales[Item Identifier] avec DIM_Item[Item Identifier].
 
 Connecter FACT_Sales[Outlet Identifier] avec DIM_Outlet[Outlet Identifier].
+
+![shemastart](IMG/shemastart.png)  <br>
 
 ##### Configuration des Relations :
 
@@ -112,6 +120,9 @@ Cliquez sur Manage Roles.
 
 Créez un nouveau rôle pour chaque niveau (par exemple : Tier 1, Tier 2, Tier 3).
 
+
+![managerole](IMG/managerole.png)  <br>
+
 Sélectionnez la table concernée, ici DIM_Outlet.
 
 Ajoutez une règle de filtre pour limiter les données visibles, comme :
@@ -126,8 +137,9 @@ Ajoutez une règle de filtre pour limiter les données visibles, comme :
 
 - Publiez le rapport sur Power BI Service.
 
-- Assignez les rôles aux utilisateurs via Power BI Service.
+- Assignez les rôles aux utilisateurs via Power BI Service. <br>
 
+![rolels.png](IMG/rolels.png)  <br>
 
 ## 6. Configuration de l’Actualisation Automatique avec Gateway
 
@@ -149,15 +161,19 @@ Dans Power BI Service, accédez à Settings > Manage Gateways.
 
 Ajoutez une nouvelle source de données et liez-la au fichier Excel utilisé pour votre rapport.
 
-Configurez les informations d’identification (par exemple, utilisateur Windows pour accéder au fichier).
+Configurez les informations d’identification (par exemple, utilisateur Windows pour accéder au fichier).<br>
 
-Mise en Place de l’Actualisation Automatique :
+![getwaymapping](IMG/getwaymapping.png)  <br>
+
+Mise en Place de l’Actualisation Automatique :<br>
+
+![refreshautomatique](IMG/refreshautomatique.png)  <br>
 
 Ouvrez votre rapport publié dans Power BI Service.
 
 Accédez à Datasets > Settings.
 
-Planifiez des actualisations automatiques (par exemple, toutes les 24 heures).
+Planifiez des actualisations automatiques (par exemple, toutes samedi et vendredi).
 
 Vérification :
 
@@ -169,16 +185,6 @@ Testez le fonctionnement en forçant une actualisation manuelle pour vérifier q
 
 
 
-
-
-
-
-
-
-
-
-
-
 ## License
 
-[ayoub] v 0.1
+[HAPPY HAKING] v 0.1
